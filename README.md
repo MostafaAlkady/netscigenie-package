@@ -7,8 +7,21 @@
 
 ## Table of Contents
 
+- [Introduction](#introduction)
 - [Installation](#installation)
 - [License](#license)
+
+## Introduction
+Netscigenie is a python package that provides the functions that are essential for Network Science research. The module `genie` contains the following functions:
+- Degree Distribution:
+- Average Clustering by Degree:
+- Average Neighbors Degree by Degree:
+- Log-binning for functions:
+- Log-binning for distributions:
+- Pareto Inverse CDF sampling:
+- HSCM Network:
+- HER Network:
+- Add Numbers:
 
 ## Installation
 
