@@ -1,4 +1,4 @@
-# netscigenie
+# netscigenie-package
 
 [![PyPI - Version](https://img.shields.io/pypi/v/netscigenie.svg)](https://pypi.org/project/netscigenie)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/netscigenie.svg)](https://pypi.org/project/netscigenie)
