@@ -129,6 +129,7 @@ def average_neighbor_degree_by_degree(G):
 
 def log_binning_function(x,y,B, xtype):
     """
+    A function that does log-binning on array x and y.
     Inputs: x--xvalues in a list
            y--values in a list 
            B--Number of bins
@@ -157,6 +158,16 @@ def log_binning_function(x,y,B, xtype):
     return X,Y
 
 def log_binning_for_distributions(x,B):
+    """ A function that returns the log-binning of an array x
+
+    Inputs:
+    x (array): the input array to be log-binned
+    B (int): number of bins
+
+    Outputs:
+    X (array): positions of centers of bins
+    y (array): log binned y-values.
+    """
     n = len(x)
     q1 = np.log(min(x))
     D = np.log(max(x))-np.log(min(x))
@@ -178,12 +189,31 @@ def log_binning_for_distributions(x,B):
     return X, y
 
 def pareto_sample_inverse_CDF(size, k_bar, gamma):
+    """ A function that returns a random sample from Pareto distribution using the Inverse CDF method.
+
+    Inputs:
+    size (int): size of the sample
+    k_bar, gamma (float): parameters in Pareto distribution.
+
+    Outputs:
+    samples (np.array): The random sample of size n.
+    """
     u = np.random.uniform(0, 1, size)
     kappa_0 = k_bar * (gamma-2)/(gamma-1)
     samples = kappa_0 / np.power(1-u, 1/(gamma-1))
     return samples
 
 def HSCM_network(n, k_bar, gamma):
+    """ A function that returns a Hypersoft Configuration Model graph.
+
+    Inputs:
+    n (int): size of the network
+    k_bar (float): average degree of network
+    gamma (float): degree exponent in degree distribution
+
+    Outputs:
+    G (nx.Graph): The desired graph.
+    """
     G = nx.Graph()
     nodes = range(n)
     G.add_nodes_from(nodes)
@@ -201,6 +231,17 @@ def HSCM_network(n, k_bar, gamma):
     return G, kappas_array
 
 def HER_network(n, k_bar, gamma):
+    """ A function that returns a Hypercanonical Erdos-Renyi graph.
+
+    Inputs:
+    n (int): size of the network
+    k_bar (float): average degree of network
+    gamma (float): degree exponent in degree distribution
+
+    Outputs:
+    G (nx.Graph): The desired graph.
+    """
+    
     G = nx.Graph()
     nodes = range(n)
     G.add_nodes_from(nodes)
